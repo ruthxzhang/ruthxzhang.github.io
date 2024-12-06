@@ -1,0 +1,281 @@
+/* General Body Styles */
+body {
+    font-family: 'Caslon', serif;
+    background-color: #ffffff;  /* White background */
+    color: #000000;  /* Black text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: #f5f5f5;  /* Subtle light grey */
+    padding: 30px 20px;
+    border-bottom: 2px solid #5a6572;  /* Greyish blue border */
+}
+
+header h1 {
+    font-size: 2.8em;
+    color: #000000;  /* Black */
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #5a6572;  /* Greyish blue */
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;  /* Black text */
+    font-size: 1.5em;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease;  /* Added letter-spacing transition */
+}
+
+nav a:hover {
+    color: #5a6572;  /* Greyish blue on hover */
+    transform: scale(1.5);  /* Slight enlargement on hover (more subtle) */
+    letter-spacing: 1.5px;  /* Slight space between letters for a more refined effect */
+}
+
+
+/* Section Styling */
+section {
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    background-color: #ffffff;  /* White background */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow for separation */
+}
+
+/* Section Titles */
+section h2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #000000;  /* Black */
+    border-bottom: 2px solid #5a6572;  /* Greyish blue underline */
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* Paragraph Text */
+section p {
+    font-size: 1.1em;
+    color: #000000;  /* Black text */
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Images */
+section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* Quotes (for user reviews) */
+blockquote {
+    font-size: 1.1em;
+    font-style: italic;
+    color: #5a6572;  /* Greyish blue */
+    border-left: 4px solid #5a6572;
+    padding-left: 15px;
+    margin: 20px 0;
+}
+
+/* Links styled to blend naturally */
+a {
+    color: #3a5a77; /* Muted grey-blue text */
+    text-decoration: underline; /* Subtle underline for clarity */
+    font-weight: 600; /* Slightly bolder text for emphasis */
+    transition: color 0.2s ease, background-color 0.2s ease; /* Smooth hover effect */
+    padding: 2px 4px; /* Minimal padding for hover effect */
+    border-radius: 4px; /* Soft edges for a polished feel */
+}
+
+a:hover {
+    color: #1c3a55; /* Darker blue on hover */
+    background-color: #f1f5f9; /* Light grey-blue background on hover */
+    text-decoration: none; /* Remove underline on hover for clean interaction */
+}
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f5f5f5;
+    color: #5a6572;
+    border-top: 2px solid #5a6572;  /* Greyish blue border */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    nav ul {
+        display: block;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 20px 15px;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    footer {
+        font-size: 0.9em;
+    }
+}
+
+/* Handwritten Fonts Section */
+
+#handwritten-fonts a {
+    color: #5a6572; /* Greyish blue for Taobao link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#handwritten-fonts a:hover {
+    text-decoration: underline;
+}
+
+/* Font Examples Gallery */
+.font-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Flexible grid */
+    gap: 30px;
+    justify-items: center;
+    margin-top: 40px;
+}
+
+.font-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.font-item:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.font-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.font-item p {
+    font-size: 1em;
+    color: #555;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* About Me Section */
+#about {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Makes sure it is responsive */
+    gap: 30px; /* Space between image and text */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-photo {
+    width: 150px; /* Adjust the size of the photo */
+    height: 150px; /* Adjust the height of the photo */
+    border-radius: 50%; /* Circular photo */
+    object-fit: cover; /* Ensure the image scales correctly */
+    border: 3px solid #ddd; /* Optional border for the image */
+}
+
+#about p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Cat Photos Section */
+
+#cat-photos p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.cat-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.cat-item {
+    text-align: center;
+}
+
+.cat-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.cat-item img:hover {
+    transform: scale(1.05);  /* Slight zoom effect */
+}
+
+.cat-item p {
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+    font-style: italic;
+}
+
