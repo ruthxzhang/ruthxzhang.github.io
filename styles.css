@@ -1,91 +1,176 @@
+/* Import Google Fonts for a bold, futuristic look */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Bebas+Neue&display=swap');
+
 /* General Body Styles */
 body {
-    font-family: 'Caslon', serif;
-    background-color: #ffffff;  /* White background */
-    color: #000000;  /* Black text */
+    font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(120deg, #fef9f0 0%, #e0f7fa 100%); /* Cream to light cyan gradient */
+    color: #1e293b; /* Deep slate for readability */
     margin: 0;
     padding: 0;
-    line-height: 1.8;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Subtle background animation */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(45, 212, 191, 0.1) 10%, transparent 11%);
+    background-size: 50px 50px;
+    animation: particleMove 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes particleMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
 }
 
 /* Header */
 header {
     text-align: center;
-    background-color: #f5f5f5;  /* Subtle light grey */
-    padding: 30px 20px;
-    border-bottom: 2px solid #5a6572;  /* Greyish blue border */
+    padding: 80px 20px;
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+    backdrop-filter: blur(15px); /* Glassmorphism effect */
+    border-radius: 0 0 20px 20px;
+    transform: skewY(-1deg); /* Irregular tilt */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 40px;
 }
 
 header h1 {
-    font-size: 2.8em;
-    color: #000000;  /* Black */
-    margin-bottom: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 6em;
+    color: #a855f7; /* Electric purple */
+    margin-bottom: 15px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    animation: pulseText 2s ease-in-out infinite;
 }
 
 header p {
-    font-size: 1.2em;
-    color: #5a6572;  /* Greyish blue */
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #2dd4bf; /* Vibrant teal */
+}
+
+/* Pulse animation for header */
+@keyframes pulseText {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 /* Navigation */
 nav {
-    text-align: center;
-    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 12px
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 nav li {
-    display: inline-block;
-    margin: 0 15px;
+    position: relative;
 }
 
 nav a {
     text-decoration: none;
-    color: #000000;  /* Black text */
-    font-size: 1.5em;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease;  /* Added letter-spacing transition */
+    color: #1e293b; /* Deep slate */
+    font-size: 1.8em;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease;
 }
 
 nav a:hover {
-    color: #5a6572;  /* Greyish blue on hover */
-    transform: scale(1.5);  /* Slight enlargement on hover (more subtle) */
-    letter-spacing: 1.5px;  /* Slight space between letters for a more refined effect */
+    color: #fef9f0; /* Cream */
+    background: #a855f7; /* Purple on hover */
+    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
 }
-
 
 /* Section Styling */
 section {
-    padding: 40px 20px;
-    margin: 20px auto;
-    max-width: 1000px;
-    border-radius: 10px;
-    background-color: #ffffff;  /* White background */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow for separation */
+    padding: 80px 120px;
+    margin: 50px auto;
+    max-width: 1300px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    border-radius: 20px 10px 30px 15px; /* Irregular corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: skewX(-2deg); /* Subtle skew for flair */
+    animation: floatIn 1s ease-out;
+}
+
+@keyframes floatIn {
+    from { transform: skewX(-2deg) translateY(30px); opacity: 0; }
+    to { transform: skewX(-2deg) translateY(0); opacity: 1; }
 }
 
 /* Section Titles */
 section h2 {
-    text-align: center;
-    font-size: 1.8em;
-    color: #000000;  /* Black */
-    border-bottom: 2px solid #5a6572;  /* Greyish blue underline */
-    display: inline-block;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.2em;
+    color: #2dd4bf; /* Teal */
+    margin-bottom: 30px;
+    padding-left: 30px;
+    border-left: 5px solid #a855f7; /* Purple border */
 }
 
 /* Paragraph Text */
 section p {
-    font-size: 1.1em;
-    color: #000000;  /* Black text */
+    font-size: 1.3em;
+    color: #1e293b;
     line-height: 1.8;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+/* Links */
+a {
+    color: #a855f7; /* Purple */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 6px;
+    position: relative;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #2dd4bf; /* Teal underline */
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+a:hover {
+    color: #fef9f0;
+    background: #2dd4bf; /* Teal on hover */
+}
+
+a:hover::after {
+    width: 100%;
 }
 
 /* Images */
@@ -93,193 +178,260 @@ section img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 20px auto;
-    border-radius: 10px;
+    margin: 30px auto;
+    border-radius: 15px 5px 20px 10px; /* Irregular border */
+    border: 2px solid #2dd4bf; /* Teal */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Quotes (for user reviews) */
+section img:hover {
+    transform: scale(1.05) rotate(1deg); /* Slight tilt for creativity */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Quotes (for user reviews in Handwritten Fonts) */
 blockquote {
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-style: italic;
-    color: #5a6572;  /* Greyish blue */
-    border-left: 4px solid #5a6572;
-    padding-left: 15px;
-    margin: 20px 0;
+    color: #1e293b;
+    border-left: 4px solid #a855f7; /* Purple */
+    padding: 15px 20px;
+    margin: 30px 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    transform: skewX(-1deg);
 }
-
-/* Links styled to blend naturally */
-a {
-    color: #3a5a77; /* Muted grey-blue text */
-    text-decoration: underline; /* Subtle underline for clarity */
-    font-weight: 600; /* Slightly bolder text for emphasis */
-    transition: color 0.2s ease, background-color 0.2s ease; /* Smooth hover effect */
-    padding: 2px 4px; /* Minimal padding for hover effect */
-    border-radius: 4px; /* Soft edges for a polished feel */
-}
-
-a:hover {
-    color: #1c3a55; /* Darker blue on hover */
-    background-color: #f1f5f9; /* Light grey-blue background on hover */
-    text-decoration: none; /* Remove underline on hover for clean interaction */
-}
-
-
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 20px 0;
-    background-color: #f5f5f5;
-    color: #5a6572;
-    border-top: 2px solid #5a6572;  /* Greyish blue border */
+    padding: 50px 0;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #1e293b;
+    transform: skewY(1deg);
+    font-size: 1.3em;
+}
+
+/* About Me Section */
+#about {
+    padding: 100px 20px;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.3em;
+    color: #1e293b;
+    line-height: 1.8;
+    margin-right: 5px;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.about-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px 5px 30px 10px; /* Irregular shape */
+    object-fit: cover;
+    border: 3px solid #a855f7; /* Purple */
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
+    transform: rotate(-3deg); /* Artistic tilt */
+    transition: transform 0.4s ease;
+}
+
+.about-photo:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+#about a {
+    display: inline-block;
+    background: #a855f7; /* Purple CTA */
+    color: #fef9f0;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+#about a:hover {
+    background: #2dd4bf; /* Teal on hover */
+    transform: scale(1.1);
+}
+
+/* Education Section */
+#education p {
+    font-size: 1.3em;
+    font-weight: 500;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px 5px 15px 10px;
+    margin-bottom: 20px;
+    transform: skewX(1deg);
+}
+
+#education strong {
+    color: #a855f7; /* Purple for emphasis */
+}
+
+/* Projects Section */
+#projects p {
+    font-size: 1.3em;
+    font-weight: 500;
+    padding: 20px;
+    border-left: 3px solid #2dd4bf; /* Teal */
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+    transition: background 0.3s ease;
+}
+
+#projects p:hover {
+    background: rgba(45, 212, 191, 0.3); /* Teal-tinted hover */
+}
+
+/* Handwritten Fonts Section */
+#handwritten-fonts a {
+    color: #a855f7; /* Purple */
+    font-weight: bold;
+}
+
+#handwritten-fonts a:hover {
+    background: #2dd4bf; /* Teal */
+    color: #fef9f0;
+}
+
+.font-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 50px;
+    margin-top: 60px;
+    transform: skewY(-1deg);
+}
+
+.font-item {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px 5px 20px 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform: rotate(2deg);
+}
+
+.font-item:hover {
+    transform: rotate(0deg) translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.font-item p {
+    font-size: 1.2em;
+    color: #1e293b;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Cat Photos Section */
+#cat-photos p {
+    font-size: 1.4em;
+    color: #1e293b;
+    margin-bottom: 50px;
+}
+
+.cat-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 50px;
+    transform: skewY(1deg);
+}
+
+.cat-item {
+    text-align: center;
+    transform: rotate(-2deg);
+    transition: transform 0.4s ease;
+}
+
+.cat-item:hover {
+    transform: rotate(0deg) translateY(-10px);
+}
+
+.cat-item p {
+    font-size: 1.2em;
+    color: #1e293b;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Contact Section */
+#contact ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+#contact li {
+    margin: 20px 0;
+    font-size: 1.4em;
+}
+
+#contact a {
+    font-weight: 700;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2.2em;
+        font-size: 3.2em;
     }
 
     nav ul {
-        display: block;
+        flex-direction: column;
+        gap: 20px;
     }
 
     nav li {
-        display: block;
         margin: 10px 0;
     }
 
     section {
-        padding: 20px 15px;
+        padding: 50px 15px;
+        transform: skewX(0deg); /* Remove skew for mobile */
     }
 
     section h2 {
-        font-size: 1.8em;
+        font-size: 2.5em;
     }
 
-    footer {
-        font-size: 0.9em;
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .font-gallery, .cat-gallery {
+        grid-template-columns: 1fr;
+        transform: skewY(0deg);
+    }
+
+    .font-item, .cat-item {
+        transform: rotate(0deg);
     }
 }
 
-/* Handwritten Fonts Section */
-
-#handwritten-fonts a {
-    color: #5a6572; /* Greyish blue for Taobao link */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#handwritten-fonts a:hover {
-    text-decoration: underline;
-}
-
-/* Font Examples Gallery */
-.font-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Flexible grid */
-    gap: 30px;
-    justify-items: center;
-    margin-top: 40px;
-}
-
-.font-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.font-item:hover {
-    transform: translateY(-5px); /* Slight lift effect on hover */
-}
-
-.font-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.font-item p {
-    font-size: 1em;
-    color: #555;
-    margin-top: 15px;
-    font-style: italic;
-}
-
-/* About Me Section */
-#about {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.about-container {
+.photo-and-button {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap; /* Makes sure it is responsive */
-    gap: 30px; /* Space between image and text */
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.about-photo {
-    width: 150px; /* Adjust the size of the photo */
-    height: 150px; /* Adjust the height of the photo */
-    border-radius: 50%; /* Circular photo */
-    object-fit: cover; /* Ensure the image scales correctly */
-    border: 3px solid #ddd; /* Optional border for the image */
-}
-
-#about p {
-    font-size: 1.2em;
-    color: #555;
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Cat Photos Section */
-
-#cat-photos p {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 30px;
-}
-
-.cat-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-    justify-items: center;
-}
-
-.cat-item {
-    text-align: center;
-}
-
-.cat-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.cat-item img:hover {
-    transform: scale(1.05);  /* Slight zoom effect */
-}
-
-.cat-item p {
-    font-size: 1em;
-    color: #555;
-    margin-top: 10px;
-    font-style: italic;
-}
-
-::selection {
-    background-color: #add8e6;  /* Highlight color */
-    color: #000000;              /* Text color when selected */
+    gap: 80px; /* Space between photo and button */
 }
