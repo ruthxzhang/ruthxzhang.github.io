@@ -1,6 +1,19 @@
 /* Import Google Fonts for a clean, handwritten look */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Caveat:wght@500&display=swap');
 
+@font-face {
+    font-family: 'StardewValley';
+    src: url('fonts/Stardew_Valley.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.stardew-word {
+    font-family: 'StardewValley', cursive; 
+    font-size: 1.4em; /* optional: make it pop */
+    color: #ca9612; /* cozy Stardew brown */
+}
+
 /* General Body Styles */
 body {
     font-family: 'Inter', sans-serif;
